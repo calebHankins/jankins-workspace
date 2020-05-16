@@ -1,6 +1,6 @@
 # jankins-workspace
 
-<img src="https://code.visualstudio.com/assets/updates/1_35/logo-stable.png" width="200">  <img src="./img/jankins.png" onmouseover="this.src='./img/jankins.gif'" onmouseout="this.src='./img/jankins.png'" width="200"/>
+<img src="https://code.visualstudio.com/assets/updates/1_35/logo-stable.png" width="200">  <img src="https://raw.githubusercontent.com/calebHankins/jankins-workspace/master/img/jankins.png" onmouseover="this.src='https://raw.githubusercontent.com/calebHankins/jankins-workspace/master/img/jankins.gif'" onmouseout="this.src='https://raw.githubusercontent.com/calebHankins/jankins-workspace/master/img/jankins.png'" width="200"/>
 [![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/calebhankins/jankins-workspace.svg?style=flat-square)](https://hub.docker.com/r/calebhankins/jankins-workspace/)
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/calebhankins/jankins-workspace.svg?style=flat-square)](https://hub.docker.com/r/calebhankins/jankins-workspace/)
 
