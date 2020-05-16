@@ -1,0 +1,59 @@
+{
+    "folders": [{
+            "name": "jankins config (.jankins)",
+            "path": "../.jankins"
+        },
+        {
+            "name": "jankins",
+            "path": "../jankins"
+        }
+    ],
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "settings": {
+        "window.titleSeparator": " 🤵🏻💓🐳 ",
+        "emojisense.languages": {
+            "markdown": true,
+            "git-commit": false,
+            "plaintext": false,
+            "json": true,
+            "javascript": true,
+            "jenkins": true,
+            "jenkinsfile": true,
+            "groovy": true
+        },
+        "emojisense.unicodeCompletionsEnabled": true,
+        "emojisense.markupCompletionsEnabled": true,
+        "emojisense.showOnColon": true,
+        "jenkins.pipeline.linter.connector.crumbUrl": "http://0.0.0.0:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)",
+        "jenkins.pipeline.linter.connector.url": "http://0.0.0.0:8080/pipeline-model-converter/validate",
+        "jenkins.pipeline.linter.connector.strictssl": false,
+        // "groovyLint.lint.trigger": "user",
+        "groovyLint.lint.trigger": "onSave",
+        "files.associations": {
+            "*.yaml": "yaml",
+            "Jenkinsfile": "groovy",
+            "Jenkinsfile-*": "groovy",
+            "*.[jJ]enkinsfile": "groovy",
+            "*.jdp": "groovy",
+            "Dockerfile-*": "dockerfile"
+        },
+        // "[jenkinsfile]": {
+        //     "editor.codeActionsOnSave": {
+        //      "workbench.action.jenkins.pipeline.linter.connector.validate"   : true
+        //      "source.fixAll": true,
+        //      "jenkins.pipeline.linter.connector.validate"   : true
+        //     }
+        // }
+        // "saveAndRunExt": {
+        //   // https://marketplace.visualstudio.com/items?itemName=padjon.save-and-run-ext
+        //     "commands": [{
+        //         "match": "Jenkinsfil\\.*",
+        //         "isShellCommand" : false,
+        //         "cmd": "jenkins.pipeline.linter.connector.validate"
+        //     }]
+        // }
+    },
+}

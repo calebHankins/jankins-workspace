@@ -1,0 +1,34 @@
+{
+    "name": "jankins-workspace",
+    "version": "0.0.0",
+    "description": "vscode workspace for local Jenkins. Useful for dev, test and linting of jenkinsfiles",
+    "main": "index.js",
+    "repository": {
+        "type": "git"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "print-env-info": "node index.js",
+        "self-signed-cert-test-node": "node ./scripts/node-self-signed-cert-chain-detector.js",
+        "configureSSH": "node ./scripts/configureSSH.js",
+        "devContainerInit": "npm install && node ./scripts/devContainerInit.js",
+        "groovyLint": "npm-groovy-lint --output 'json' | grep '^{' > './logs/groovyLintResults.json' && node /usr/src/jankins/scripts/checkGroovyLintResults.js"
+    },
+    "author": "Caleb 'chanki' Hankins",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "comment-json": "^3.0.2",
+        "mkdirp": "^1.0.3",
+        "os": "^0.1.1",
+        "path": "^0.12.7",
+        "request": "^2.88.2",
+        "touch": "^3.1.0",
+        "yn": "^4.0.0"
+    },
+    "devDependencies": {
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb-base": "^14.1.0",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-json": "^2.1.1"
+    }
+}
