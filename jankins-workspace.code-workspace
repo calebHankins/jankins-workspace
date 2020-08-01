@@ -4,6 +4,10 @@
             "path": "../.jankins"
         },
         {
+            "name": "jankins-workspace",
+            "path": "."
+        },
+        {
             "name": "jankins",
             "path": "../jankins"
         }
