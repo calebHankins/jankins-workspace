@@ -25,17 +25,11 @@
         "mutantdino.resourcemonitor",
         "bierner.emojisense",
         "hookyqr.beautify",
-        // "wallabyjs.quokka-vscode",
-        // "sketchbuch.vsc-quokka-statusbar",
         "aaron-bond.better-comments",
-        // "guillaumeisabelle.gixdeko-comments",
-        // "guillaumeisabelle.deko-tree-overviewing",
         "wmaurer.change-case",
-        // "ivory-lab.jenkinsfile-support",
         "secanis.jenkinsfile-support",
         "janjoerke.jenkins-pipeline-linter-connector",
         "NicolasVuillamy.vscode-groovy-lint",
-        // "padjon.save-and-run-ext",
         "mikestead.dotenv"
     ],
     "settings": {

@@ -44,6 +44,29 @@
             "*.jdp": "groovy",
             "Dockerfile-*": "dockerfile"
         },
+        "cSpell.words": [
+            "bierner",
+            "buildcache",
+            "buildx",
+            "dbaeumer",
+            "eamodio",
+            "emojisense",
+            "enkinsfile",
+            "extensionpack",
+            "hookyqr",
+            "janjoerke",
+            "Jenkinsfil",
+            "mhutchie",
+            "mikestead",
+            "mutantdino",
+            "padjon",
+            "resourcemonitor",
+            "secanis",
+            "strictssl",
+            "Vuillamy",
+            "wmaurer",
+            "yzhang"
+        ],
         // "[jenkinsfile]": {
         //     "editor.codeActionsOnSave": {
         //      "workbench.action.jenkins.pipeline.linter.connector.validate"   : true
