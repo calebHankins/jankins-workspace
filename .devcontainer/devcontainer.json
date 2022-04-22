@@ -8,7 +8,7 @@
         "args": {
             // "BASE_IMAGE":"jenkins/jenkins:lts", // use alternate base image // needs do be debian based or the dockerfile needs massive changes
             // "BASE_IMAGE":"calebhankins/jankins:0.3.1", // use a pinned jankins version
-            "BASE_IMAGE":"calebhankins/jankins:latest", // use jankins:latest version. // At this time, manually run docker pull to get updates
+            "BASE_IMAGE":"ghcr.io/calebhankins/jankins:latest", // use jankins:latest version. // At this time, manually run docker pull to get updates
         }
     },
     "initializeCommand": "docker run --rm -it -e HOME_OVERRIDE=/host_home --mount type=bind,source=${localWorkspaceFolder},target=/workspace -w /workspace --mount source=devContainerInit-node_mods,target=/workspace/node_modules,type=volume  -v ~:/host_home node:lts-alpine npm run --production devContainerInit",
@@ -25,17 +25,11 @@
         "mutantdino.resourcemonitor",
         "bierner.emojisense",
         "hookyqr.beautify",
-        "wallabyjs.quokka-vscode",
-        "sketchbuch.vsc-quokka-statusbar",
         "aaron-bond.better-comments",
-        "guillaumeisabelle.gixdeko-comments",
-        "guillaumeisabelle.deko-tree-overviewing",
         "wmaurer.change-case",
-        // "ivory-lab.jenkinsfile-support",
         "secanis.jenkinsfile-support",
         "janjoerke.jenkins-pipeline-linter-connector",
         "NicolasVuillamy.vscode-groovy-lint",
-        // "padjon.save-and-run-ext",
         "mikestead.dotenv"
     ],
     "settings": {
