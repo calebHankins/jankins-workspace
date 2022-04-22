@@ -1,6 +1,6 @@
-ARG BASE_IMAGE=calebhankins/jankins
+ARG BASE_IMAGE=ghcr.io/calebhankins/jankins
 FROM $BASE_IMAGE
-ARG BASE_IMAGE=calebhankins/jankins
+ARG BASE_IMAGE=ghcr.io/calebhankins/jankins
 ENV BASE_IMAGE=${BASE_IMAGE}
 RUN echo "BASE_IMAGE:${BASE_IMAGE}"
 
