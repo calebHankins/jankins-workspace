@@ -1,6 +1,6 @@
 {
     "name": "jankins-workspace",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "vscode workspace for local Jenkins. Useful for dev, test and linting of jenkinsfiles",
     "main": "index.js",
     "repository": {
