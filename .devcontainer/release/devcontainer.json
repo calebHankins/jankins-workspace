@@ -1,9 +1,9 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json
 {
     "name": "jankins-workspace-release",
-    "dockerFile": "Dockerfile",
+    "dockerFile": "../Dockerfile",
     // "appPort": [8080, 50000],
-    "postCreateCommand": "dos2unix bootstrap.sh && ./bootstrap.sh",
+    // "postCreateCommand": "dos2unix bootstrap.sh && ./bootstrap.sh",
     "build": {
         "args": {
             // "BASE_IMAGE":"jenkins/jenkins:lts", // use alternate base image // needs do be debian based or the dockerfile needs massive changes
@@ -39,46 +39,46 @@
             "ms-azuretools.vscode-docker": "ui"
         },
     },
-    "runArgs": [
-        // set dev env vars
-        // ! User specific folders. You will probably want to change this section to match your personal needs
-        // "--env-file", "${localEnv:HOME}${localEnv:USERPROFILE}/.jankins/.env" // jankins / jenkins env vars
-    ],
-    "mounts": [
-        // persistent home dir for Jenkins via docker vol
-        "source=jankins-workspace-jankins_home,target=/var/jenkins_home,type=volume",
+    // "runArgs": [
+    //     // set dev env vars
+    //     // ! User specific folders. You will probably want to change this section to match your personal needs
+    //     // "--env-file", "${localEnv:HOME}${localEnv:USERPROFILE}/.jankins/.env" // jankins / jenkins env vars
+    // ],
+    // "mounts": [
+    //     // persistent home dir for Jenkins via docker vol
+    //     "source=jankins-workspace-jankins_home,target=/var/jenkins_home,type=volume",
 
-        // persistent local Maven repo
-        "source=jankins-workspace-maven-local-repository,target=/root/.m2/repository,type=volume",
+    //     // persistent local Maven repo
+    //     "source=jankins-workspace-maven-local-repository,target=/root/.m2/repository,type=volume",
 
-        // review side effects here: https://code.visualstudio.com/docs/remote/containers-advanced#_avoiding-extension-reinstalls-on-container-rebuild
-        // .ssh staging folders. Windows file permissions are too loose for ssh to function normally. Staging these and copying to ~/.ssh to lock down permissions in the container
-        // see https://code.visualstudio.com/docs/remote/troubleshooting#_fixing-ssh-file-permission-errors for more info
-        "source=${env:HOME}${env:USERPROFILE}/.ssh/id_rsa,target=/root/.ssh${env:USERPROFILE}/id_rsa,type=bind,consistency=cached",
-        "source=${env:HOME}${env:USERPROFILE}/.ssh/id_rsa.pub,target=/root/.ssh${env:USERPROFILE}/id_rsa.pub,type=bind,consistency=cached",
-        "source=${env:HOME}${env:USERPROFILE}/.ssh/known_hosts,target=/root/.ssh${env:USERPROFILE}/known_hosts,type=bind,consistency=cached",
-        "source=${env:HOME}${env:USERPROFILE}/.ssh/authorized_keys,target=/root/.ssh${env:USERPROFILE}/authorized_keys,type=bind,consistency=cached",
+    //     // review side effects here: https://code.visualstudio.com/docs/remote/containers-advanced#_avoiding-extension-reinstalls-on-container-rebuild
+    //     // .ssh staging folders. Windows file permissions are too loose for ssh to function normally. Staging these and copying to ~/.ssh to lock down permissions in the container
+    //     // see https://code.visualstudio.com/docs/remote/troubleshooting#_fixing-ssh-file-permission-errors for more info
+    //     "source=${env:HOME}${env:USERPROFILE}/.ssh/id_rsa,target=/root/.ssh${env:USERPROFILE}/id_rsa,type=bind,consistency=cached",
+    //     "source=${env:HOME}${env:USERPROFILE}/.ssh/id_rsa.pub,target=/root/.ssh${env:USERPROFILE}/id_rsa.pub,type=bind,consistency=cached",
+    //     "source=${env:HOME}${env:USERPROFILE}/.ssh/known_hosts,target=/root/.ssh${env:USERPROFILE}/known_hosts,type=bind,consistency=cached",
+    //     "source=${env:HOME}${env:USERPROFILE}/.ssh/authorized_keys,target=/root/.ssh${env:USERPROFILE}/authorized_keys,type=bind,consistency=cached",
 
-        // let's load our modules into a persistent volume for performance and to alleviate any OS specific issue
-        "source=jankins-workspace-node_modules,target=/workspaces/jankins-workspace/node_modules,type=volume",
-        // extension code persistence
-        "source=jankins-workspace-extensions,target=/root/.vscode-server/extensions,type=volume",
-        "source=jankins-workspace-extensions-insiders,target=/root/.vscode-server-insiders/extensions,type=volume",
-        // quokka config persistance
-        "source=jankins-workspace-quokka,target=/root/.quokka/,type=volume",
-        // persist command history
-        "source=jankins-workspace-bash_history,target=/command_history/,type=volume",
+    //     // let's load our modules into a persistent volume for performance and to alleviate any OS specific issue
+    //     "source=jankins-workspace-node_modules,target=/workspaces/jankins-workspace/node_modules,type=volume",
+    //     // extension code persistence
+    //     "source=jankins-workspace-extensions,target=/root/.vscode-server/extensions,type=volume",
+    //     "source=jankins-workspace-extensions-insiders,target=/root/.vscode-server-insiders/extensions,type=volume",
+    //     // quokka config persistance
+    //     "source=jankins-workspace-quokka,target=/root/.quokka/,type=volume",
+    //     // persist command history
+    //     "source=jankins-workspace-bash_history,target=/command_history/,type=volume",
 
-        // ! User specific folders. You will probably want to change this section to match your personal needs
+    //     // ! User specific folders. You will probably want to change this section to match your personal needs
 
 
-        // Git repo(s) for jankins / jenkins helper tools
-        "source=${env:HOME}${env:USERPROFILE}/git/jankins,target=/workspaces/jankins,type=bind,consistency=cached",
-        // jankins / jenkins env env config
-        "source=${env:HOME}${env:USERPROFILE}/.jankins/,target=/workspaces/.jankins,type=bind,consistency=cached",
-    ],
-    "containerEnv": {
-        // set a special folder path for Windows hosts. If we detect a Windows path downstream we'll fix the permissions for git will work inside the container
-        "SSH_TEMP_FOLDER_NAME": "/root/.ssh${env:USERPROFILE}"
-    },
+    //     // Git repo(s) for jankins / jenkins helper tools
+    //     "source=${env:HOME}${env:USERPROFILE}/git/jankins,target=/workspaces/jankins,type=bind,consistency=cached",
+    //     // jankins / jenkins env env config
+    //     "source=${env:HOME}${env:USERPROFILE}/.jankins/,target=/workspaces/.jankins,type=bind,consistency=cached",
+    // ],
+    // "containerEnv": {
+    //     // set a special folder path for Windows hosts. If we detect a Windows path downstream we'll fix the permissions for git will work inside the container
+    //     "SSH_TEMP_FOLDER_NAME": "/root/.ssh${env:USERPROFILE}"
+    // },
 }
